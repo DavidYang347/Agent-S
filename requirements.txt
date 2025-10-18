@@ -1,23 +1,35 @@
-numpy
-backoff
+numpy~=2.3.3
+backoff~=2.2.1
 pandas
-openai
-anthropic
-fastapi
+openai~=2.2.0
+anthropic~=0.69.0
+fastapi~=0.118.2
 uvicorn
-paddleocr
+paddleocr~=3.2.0
 paddlepaddle
 together
-scikit-learn
+scikit-learn~=1.7.2
 websockets
-tiktoken
-pyautogui
-toml
+tiktoken~=0.12.0
+pyautogui~=0.9.54
+toml~=0.10.2
 black
-pytesseract
+pytesseract~=0.3.13
 google-genai
+
+dotenv~=0.9.9
+python-dotenv~=1.1.1
+setuptools~=78.1.1
+requests~=2.32.5
+psutil~=7.1.0
+pywinauto~=0.6.9
+pillow~=11.3.0
+pydantic~=2.12.0
+protobuf~=6.32.1
+tqdm~=4.67.1
+
 
 # Platform-specific dependencies
 pyobjc; platform_system == "Darwin"
 pywinauto; platform_system == "Windows"
-pywin32; platform_system == "Windows" 
+pywin32; platform_system == "Windows"

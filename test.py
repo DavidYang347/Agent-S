@@ -12,19 +12,20 @@ current_platform = "windows"  # "darwin", "windows"
 
 provider = "openai"  # 默认是OPENAI
 model = "gpt-5-2025-08-07"
+model_temperature = 1
 
 engine_params = {
   "engine_type": provider,
   "model": model,
   # "base_url": model_url,           # Optional
   # "api_key": model_api_key,        # Optional
-  # "temperature": model_temperature # Optional
+  "temperature": model_temperature # Optional
 }
 
 # Load the grounding engine from a custom endpoint
-ground_provider = "<your_ground_provider>"
-ground_url = "<your_ground_url>"
-ground_model = "<your_ground_model>"
+ground_provider = "huggingface"
+ground_url = "http://localhost:8080"
+ground_model = "ui-tars-1.5-7b"
 ground_api_key = "<your_ground_api_key>"
 
 # Set grounding dimensions based on your model's output coordinate resolution
@@ -37,7 +38,7 @@ engine_params_for_grounding = {
   "engine_type": ground_provider,
   "model": ground_model,
   "base_url": ground_url,
-  "api_key": ground_api_key,  # Optional
+  # "api_key": ground_api_key,  # Optional
   "grounding_width": grounding_width,
   "grounding_height": grounding_height,
 }
@@ -75,7 +76,7 @@ obs = {
   "screenshot": screenshot_bytes,
 }
 
-instruction = "Close VS Code"
+instruction = "open edge browser"
 info, action = agent.predict(instruction=instruction, observation=obs)
 
 exec(action[0])
